@@ -2,14 +2,17 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Compilar C++",
+      "label": "Compilar proyecto C",
       "type": "shell",
-      "command": "g++",
+      "command": "gcc",
       "args": [
         "-g",
-        "main.cpp",
+        "${workspaceFolder}/src/Ejercicio_1/main.c",
+        "${workspaceFolder}/lib/util.c",
+        "-I",
+        "${workspaceFolder}/lib",
         "-o",
-        "main.exe"
+        "${workspaceFolder}/bin/main.exe"
       ],
       "group": {
         "kind": "build",
