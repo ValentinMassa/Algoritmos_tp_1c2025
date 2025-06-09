@@ -31,6 +31,41 @@ unsigned char InsertarElementoEnElPrincipio(t_DicLista *p, const void* key, unsi
     *p = nuevo;
     return 1;
     }
+
+unsigned char InsertarElementoSinRepeticionDeKey(t_DicLista *p, const void* key, unsigned sizeKey, const void* Data, unsigned sizeData,
+                                            void(*actualizar)(void*a, const void* b), int (*CmpDic)(const void* a, const void* b)){
+    t_Node * nuevo;
+    int resultado =0;
+
+    while( *p && (resultado = CmpDic(key, (*p)->__key)) != 0 )
+        p = &(*p)->__next;
+
+    if(resultado == 0){
+        actualizar((*p)->__data, Data);
+        return 1;
+    }
+
+    nuevo = (t_Node*)malloc(sizeof(t_Node));
+    if(!nuevo)
+    {
+        free(nuevo);
+        return 0;
+    }
+    if(( nuevo->__key = malloc(sizeKey)) == NULL || (nuevo->__data = malloc(sizeData)) == NULL) {
+        free(nuevo->__key);
+        return 0;
+       }
+    memcpy(nuevo->__key, key, sizeKey);
+    nuevo->__sizeKey = sizeKey;
+
+    memcpy(nuevo->__data, Data, sizeData);
+    nuevo->__Size_Data = sizeData;
+
+    nuevo->__next = *p;
+    *p = nuevo;
+    return 1;
+}
+
 unsigned char ObtenerValorPorClave(t_DicLista *p, const void* key, void* DestinoData,
                                    unsigned sizeDataDestino,
                                    int (*CmpDic)(const void* a, const void* b)){

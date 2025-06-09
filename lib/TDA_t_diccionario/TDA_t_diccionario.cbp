@@ -8,8 +8,9 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/TDA_t_diccionario" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
 				<Option object_output="obj/Debug/" />
-				<Option type="1" />
+				<Option type="2" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
@@ -31,8 +32,28 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../TDA_t_ListaDiccionario/ListaDiccionario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../TDA_t_ListaDiccionario/ListaDiccionario.h" />
+		<Unit filename="QA/PruebasChar.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="QA/PruebasInt.c">
+			<Option compilerVar="CC" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="QA/PruebasKey.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="fuente/Diccionario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="headers/diccionario.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+			<Option target="Release" />
 		</Unit>
 		<Extensions />
 	</Project>

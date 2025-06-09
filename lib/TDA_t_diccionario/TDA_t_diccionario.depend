@@ -37,3 +37,41 @@
 	"../headers/diccionario.h"
 	"PruebasKey.h"
 
+1749486739 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"QA/PruebasKey.h"
+
+1749477950 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\qa\pruebaskey.h
+
+1749487503 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\fuente\diccionario.c
+	<stdio.h>
+	<stdlib.h>
+	"../headers/diccionario.h"
+	"../../TDA_t_ListaDiccionario/ListaDiccionario.h"
+
+1749487241 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\headers\diccionario.h
+
+1749486654 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_listadiccionario\listadiccionario.h
+
+1749486812 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\qa\pruebaschar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../headers/diccionario.h"
+	"PruebasKey.h"
+
+1749477950 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\qa\pruebasint.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../headers/diccionario.h"
+	"PruebasKey.h"
+
+1749486642 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_listadiccionario\listadiccionario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListaDiccionario.h"
+

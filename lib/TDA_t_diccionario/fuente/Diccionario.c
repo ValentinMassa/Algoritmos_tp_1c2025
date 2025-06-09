@@ -53,6 +53,26 @@ unsigned char poner_dic(t_diccionario * dic, void* key, unsigned size_key , void
     return 1;
 }
 
+unsigned char poner_dicSinRep(t_diccionario * dic, void* key, unsigned size_key , void* value, unsigned size_value, void (*actualizar)(void*, const void*)){
+
+    unsigned posicion;
+    t_DicLista elemento;
+
+    posicion = Hash_Generico_DJB2(key, size_key, dic->cantElem);
+
+    if( dic->dic[posicion]  == 0){// primer valor en ese espacio del diccionario
+        CreateDList(&elemento);
+        if(!InsertarElementoEnElPrincipio(&elemento, key, size_key, value, size_value))
+            return 0;
+        dic->dic[posicion] = elemento;
+    }
+    else{
+        if(!InsertarElementoSinRepeticionDeKey(&(dic->dic[posicion]), key, size_key, value, size_value, actualizar, dic->CmpDic))
+            return 0;
+    }
+    return 1;
+}
+
 unsigned char obtener_dic(t_diccionario * dic, void* key,unsigned size_key, void* data, unsigned size_data){
 
     unsigned posicion;

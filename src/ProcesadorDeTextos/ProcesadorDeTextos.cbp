@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="../../lib/TDA_t_diccionario/headers" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,9 +33,10 @@
 			<Add option="-Wall" />
 			<Add directory="../../lib/TDA_t_diccionario/headers" />
 		</Compiler>
-		<Unit filename="Fuente/Interfaz.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Linker>
+			<Add library="../../lib/TDA_t_diccionario/bin/Debug/libTDA_t_diccionario.a" />
+			<Add directory="../../lib/TDA_t_diccionario/headers" />
+		</Linker>
 		<Unit filename="Fuente/ProcesadorTexto.c">
 			<Option compilerVar="CC" />
 		</Unit>

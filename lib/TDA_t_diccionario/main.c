@@ -6,7 +6,7 @@
 
 int main()
 {
-    pruebasKeyInt();
+    //pruebasKeyInt();
     ProbarKeyChar();
     return 0;
 }

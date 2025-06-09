@@ -3,14 +3,11 @@
 
 #include <string.h>
 
-#define RutaGenerica "./ArchivoTexto/"
+#define RutaGenerica "../../Carpeta de Archivos/"
 #define  MAX_LARGO_RUTA 47
 #define  MAX_LARGO_ARCHIVO 50 - strlen(RutaGenerica)
 
-typedef struct{
-    unsigned TamTabla;
-    char ruta[MAX_LARGO_RUTA];
-}t_interfaz;
+
 
 void InterfazUsuario();
 

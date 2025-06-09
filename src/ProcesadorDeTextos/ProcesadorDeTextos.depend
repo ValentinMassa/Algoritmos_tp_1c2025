@@ -21,3 +21,24 @@
 
 1749435507 c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\headers\diccionario.h
 
+1749489785 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\fuente\procesadortexto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Header/ProcesadorTexto.h"
+	"../../../lib/TDA_t_diccionario/headers/diccionario.h"
+
+1749479279 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\header\procesadortexto.h
+	<string.h>
+
+1749477950 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Header/ProcesadorTexto.h"
+
+1749479611 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\header\operacionesprocesador.h
+
+1749483706 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\fuente\operacionesprocesador.c
+
+1749487241 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\headers\diccionario.h
+

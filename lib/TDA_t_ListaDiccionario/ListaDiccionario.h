@@ -18,6 +18,9 @@ void CreateDList(t_DicLista *p);
 
 unsigned char InsertarElementoEnElPrincipio(t_DicLista *p, const void* key, unsigned sizeKey, const void* Data, unsigned sizeData);
 
+unsigned char InsertarElementoSinRepeticionDeKey(t_DicLista *p, const void* key, unsigned sizeKey, const void* Data, unsigned sizeData,
+                                            void(*actualizar)(void*a, const void* b), int (*CmpDic)(const void* a, const void* b));
+
 unsigned char ObtenerValorPorClave(t_DicLista *p, const void* key, void* DestinoData,
                                    unsigned sizeDataDestino,
                                    int (*CmpDic)(const void* a, const void* b));

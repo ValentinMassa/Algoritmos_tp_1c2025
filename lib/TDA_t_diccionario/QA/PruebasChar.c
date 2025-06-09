@@ -14,6 +14,7 @@ typedef struct{
 int CompararClavesString(const void*, const void*);
 void imprimirPersonas(const void* key, const void*dato);
 void accionString(void* data);
+void actualizarString(void* dataFin, const void* dataNueva);
 
 
 void ProbarKeyChar(){
@@ -38,13 +39,13 @@ void ProbarKeyChar(){
         {"Julieta Rojas", 26, "Entre Rios 144"},
         {"Nicolas Aguirre", 32, "Santa Fe 321"},
         {"Laura Medina", 23, "Lavalle 201"},
-        {"Agustin Navarro", 38, "Castelli 303"}};
+        {"Miguel Torres", 38, "Castelli 303"}};
 
 
     t_diccionario diccionario;
     crear_dic(&diccionario, 5, CompararClavesString);
     for(i = 0; i<cantidad; i++){
-        poner_dic(&diccionario, vec[i].name, sizeof(vec->name), &vec[i], sizeof(t_persona));
+        poner_dicSinRep(&diccionario, vec[i].name, sizeof(vec->name), &vec[i], sizeof(t_persona), actualizarString);
     }
     ImprimirDiccionarioYColisiones(&diccionario, imprimirPersonas);
     puts(" ");
@@ -109,4 +110,12 @@ void imprimirPersonas(const void* key, const void*dato){
 void accionString(void* data){
     t_persona* newperson = (t_persona*)data;
     strcat(newperson->name, " Hola");
+}
+
+void actualizarString(void* dataFin, const void* dataNueva){
+    t_persona* finperson = (t_persona*)dataFin;
+    t_persona* newperson = (t_persona*)dataNueva;
+
+    finperson->edad = newperson->edad;
+    strcpy(finperson->domicilio, newperson->domicilio);
 }

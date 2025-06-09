@@ -25,6 +25,7 @@ unsigned char crear_dic(t_diccionario * dic, int CapMax, int(*CmpDic)(const void
 
 unsigned char poner_dic(t_diccionario * dic, void* key, unsigned size_key , void* value, unsigned size_value);
 
+unsigned char poner_dicSinRep(t_diccionario * dic, void* key, unsigned size_key , void* value, unsigned size_value, void (*actualizar)(void*, const void*));
 
 unsigned char obtener_dic(t_diccionario * dic, void* key,unsigned size_key, void* data, unsigned size_data);
 
