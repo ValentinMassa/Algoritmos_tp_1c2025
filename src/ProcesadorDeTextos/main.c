@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Header/ProcesadorTexto.h"
+
+
 
 int main()
 {
-    printf("Hello world!\n");
-    printf("Hello world!\n");
-
-    
+    InterfazUsuario();
     return 0;
 }

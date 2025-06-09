@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1749443400 source:c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\src\procesadordetextos\fuente\procesadortexto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Header/ProcesadorTexto.h"
+
+1749442176 source:c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\src\procesadordetextos\fuente\interfaz.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Header/ProcesadorTexto.h"
+
+1749443387 c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\src\procesadordetextos\header\procesadortexto.h
+	<string.h>
+
+1749442474 source:c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\src\procesadordetextos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Header/ProcesadorTexto.h"
+
+1749435507 c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\headers\diccionario.h
+

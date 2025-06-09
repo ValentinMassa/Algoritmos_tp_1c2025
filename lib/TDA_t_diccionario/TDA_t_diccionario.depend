@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1749436362 source:c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"QA/PruebasKey.h"
+
+1749435507 c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\headers\diccionario.h
+
+1749426552 c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_listadiccionario\listadiccionario.h
+
+1749429004 source:c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_listadiccionario\listadiccionario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListaDiccionario.h"
+
+1749436124 source:c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\fuente\diccionario.c
+	<stdio.h>
+	<stdlib.h>
+	"../headers/diccionario.h"
+	"../../TDA_t_ListaDiccionario/ListaDiccionario.h"
+
+1749436195 source:c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\qa\pruebaschar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../headers/diccionario.h"
+	"PruebasKey.h"
+
+1749431842 c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\qa\pruebaskey.h
+
+1749436124 source:c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\qa\pruebasint.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../headers/diccionario.h"
+	"PruebasKey.h"
+
