@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
 #include "../Header/ProcesadorTexto.h"
 #include "../../../lib/TDA_t_diccionario/headers/diccionario.h"
 
@@ -44,6 +46,7 @@ unsigned char CargarArchivoEnDiccionario(t_interfaz * newI, t_diccionario *dicci
         int CompararClavesString(const void*a , const void*b );
     unsigned char TrozarYGuardarPalabras(char* buffer, t_diccionario* diccionario, t_informe * informe);
         char* BuscarInicioPalabraRecursivo(char*fin, char* buffer);
+        void ponerEnMayuscula(char* palabra) ;
     void ActualizarCantidadRepeticiones(void*a, const void*b);
     void imprimirPalabras(const void* key, const void*dato);
 
@@ -130,7 +133,7 @@ unsigned char InterfazOperaciones(t_interfaz * newI){
     printf("> 1. Podio top 5 palabras mas utilizadas \n");
     printf("> 2. Ver Tabla Hash Key y Valores \n");
     printf("> 3. Salir \n");
-    printf("> Ingrese su opción: ");
+    printf("> Ingrese su opcion: ");
         fflush(stdin);
         if (fgets(opcion, sizeof(opcion), stdin) == NULL) {
         printf("\n> La opcion NO se encuentra disponible. Intente de nuevamente.\n");
@@ -228,15 +231,16 @@ unsigned char TrozarYGuardarPalabras(char* buffer, t_diccionario* diccionario, t
         fin = pointer;
         inicio = BuscarInicioPalabraRecursivo(fin, buffer);
 
+        memset(palabra.palabra, 0, TAM_MAX_WORD);
         strcpy(palabra.palabra, inicio);
         palabra.repeticion = 0;
 
-        if(!poner_dicSinRep(diccionario, palabra.palabra, sizeof(palabra.palabra) ,&palabra, sizeof(palabra), ActualizarCantidadRepeticiones))
+        if(!poner_dicSinRep(diccionario, palabra.palabra,TAM_MAX_WORD,&palabra, sizeof(palabra), ActualizarCantidadRepeticiones))
             return 0;
         informe->cantPalabras +=1;
+        *inicio = '\0';
         pointer = inicio - 1;
     }
-
     return 1;
 }
 
@@ -247,8 +251,10 @@ char* BuscarInicioPalabraRecursivo(char*fin, char* buffer){
 
     iterador = fin - 1;
 
-    if(iterador <= buffer || ES_ESPACIO(*iterador) || ES_SIGNO_PUNTUACION(*iterador))
+    if(ES_ESPACIO(*iterador) || ES_SIGNO_PUNTUACION(*iterador))
         return iterador + 1;
+    if(iterador == buffer || ES_ESPACIO(*iterador) || ES_SIGNO_PUNTUACION(*iterador))
+        return iterador;
 
     return BuscarInicioPalabraRecursivo(iterador, buffer);
 }
@@ -271,3 +277,9 @@ void imprimirPalabras(const void* key, const void*dato){
     printf("CLAVE: %s, VALOR: PALABRA: %s REPETICIONES: %d \n", clave, palabra->palabra, palabra->repeticion);
 }
 
+void ponerEnMayuscula(char* palabra) {
+    while (*palabra) {
+        *palabra = toupper((unsigned char)*palabra);
+        palabra++;
+    }
+}
