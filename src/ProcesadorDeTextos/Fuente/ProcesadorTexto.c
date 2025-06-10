@@ -64,6 +64,7 @@ void InterfazUsuario(){
 
 void interfazCargaDatosIniciales(t_interfaz * newI){
     char nombre_archivo[MAX_LARGO_ARCHIVO];
+    char buffer[4];
     FILE* fp;
     int valido;
 
@@ -99,11 +100,14 @@ void interfazCargaDatosIniciales(t_interfaz * newI){
     } while (!valido);
     fclose(fp);
     printf("> Ingrese la cantidad de entradas de la tabla: ");
-    while (scanf("%u", &newI->TamTabla) != 1 || newI->TamTabla == 0) {
+    while (fgets(buffer, 3, stdin) == NULL || atoi(buffer) <= 0) {
         printf("Cantidad inválida. Ingrese un número mayor a 0: ");
         fflush(stdin);
     }
     fflush(stdin);
+
+    newI->TamTabla = atoi(buffer);
+
 
     printf("\n> Datos cargados correctamente!\n");
     printf("> Archivo: %s\n", newI->ruta);
