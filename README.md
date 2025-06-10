@@ -76,7 +76,6 @@ Este repositorio contiene el Trabajo Práctico de la materia Algoritmos y Estruc
 | --- | --- |
 | Error de linker (falta de librería) | Verifica haber agregado correctamente las rutas relativas de las librerías en Linker Settings. |
 | El programa no encuentra el archivo de texto | Asegúrate de colocar el archivo en la carpeta indicada por la interfaz y de ingresar el nombre correctamente. |
-| No se liberan todos los recursos al vaciar el diccionario | Revisar implementación de la primitiva `vaciar_dic` y uso de memoria dinámica. |
 
 ---
 
