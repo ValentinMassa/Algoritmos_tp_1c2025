@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1749518077 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\lista\main.c
+	"./main.h"
+	<stdlib.h>
+	<string.h>
+
+1749518049 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\lista\main.h
+	<stdio.h>
+

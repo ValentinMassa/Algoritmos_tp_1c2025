@@ -110,12 +110,12 @@ unsigned char sacar_dic(t_diccionario * dic, const void* key, unsigned size_key)
 
 }
 
-void recorrer_dic_map(t_diccionario * dic, void accion(void* data)){
+void recorrer_dic_map(t_diccionario * dic, void* param , void accion(void* data, void* parametro)){
     int i;
 
     for(i=0; i<dic->cantElem; i ++){
         if(dic->dic[i] != 0)
-            MapDLista(( &dic->dic[i]), accion);
+            MapDLista(( &dic->dic[i]),param, accion);
     }
 }
 

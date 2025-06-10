@@ -35,6 +35,7 @@
 		</Compiler>
 		<Linker>
 			<Add library="../../lib/TDA_t_diccionario/bin/Debug/libTDA_t_diccionario.a" />
+			<Add library="../../lib/Lista/bin/Debug/libLista.a" />
 			<Add directory="../../lib/TDA_t_diccionario/headers" />
 		</Linker>
 		<Unit filename="Fuente/ProcesadorTexto.c">

@@ -105,9 +105,9 @@ unsigned char EliminarValorPorClave(t_DicLista *p, const void* key,
     }
     return 0;
 }
-void MapDLista(t_DicLista *p, void (*accion)(void*)){
+void MapDLista(t_DicLista *p, void* param ,void (*accion)(void* dataNodo, void* parametro)){
     while(*p){
-        accion((*p)->__data);
+        accion((*p)->__data, param);
         p = &(*p)->__next;
     }
 }

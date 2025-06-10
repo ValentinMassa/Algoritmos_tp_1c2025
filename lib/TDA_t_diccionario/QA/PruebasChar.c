@@ -13,7 +13,7 @@ typedef struct{
 
 int CompararClavesString(const void*, const void*);
 void imprimirPersonas(const void* key, const void*dato);
-void accionString(void* data);
+void accionString(void* data, void* param);
 void actualizarString(void* dataFin, const void* dataNueva);
 
 
@@ -80,7 +80,7 @@ void ProbarKeyChar(){
     puts(" ");
 
     puts("Map + Hola");
-    recorrer_dic_map(&diccionario, accionString);
+    recorrer_dic_map(&diccionario,NULL,accionString);
 
     ImprimirDiccionarioYColisiones(&diccionario, imprimirPersonas);
     puts(" ");
@@ -107,7 +107,7 @@ void imprimirPersonas(const void* key, const void*dato){
     printf("CLAVE: %s, VALOR: %s, %d, %s \n", clave, per->name, per->edad, per->domicilio);
 }
 
-void accionString(void* data){
+void accionString(void* data, void* param){
     t_persona* newperson = (t_persona*)data;
     strcat(newperson->name, " Hola");
 }

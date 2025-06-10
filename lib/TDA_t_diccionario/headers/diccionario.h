@@ -32,8 +32,7 @@ unsigned char obtener_dic(t_diccionario * dic, void* key,unsigned size_key, void
 
 unsigned char sacar_dic(t_diccionario * dic, const void* key, unsigned size_key);
 
-void recorrer_dic_map(t_diccionario * dic, void accion(void* data));
-
+void recorrer_dic_map(t_diccionario * dic, void* param , void accion(void* data, void* parametro));
 
 void vaciar_dic(t_diccionario * dic);
 

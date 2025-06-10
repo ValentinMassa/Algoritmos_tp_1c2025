@@ -21,13 +21,14 @@
 
 1749435507 c:\users\valee\onedrive\desktop\tpalgoritmos\algoritmos_tp_1c2025\lib\tda_t_diccionario\headers\diccionario.h
 
-1749508682 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\fuente\procesadortexto.c
+1749518339 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\fuente\procesadortexto.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"../Header/ProcesadorTexto.h"
 	"../../../lib/TDA_t_diccionario/headers/diccionario.h"
+	"../../../lib/Lista/main.h"
 
 1749506163 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\header\procesadortexto.h
 	<string.h>
@@ -41,5 +42,8 @@
 
 1749483706 source:c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\src\procesadordetextos\fuente\operacionesprocesador.c
 
-1749487241 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\headers\diccionario.h
+1749511231 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\tda_t_diccionario\headers\diccionario.h
+
+1749518049 c:\users\valee\desktop\todo_valen\repositorio_github\algoritmos_tp_1c2025\lib\lista\main.h
+	<stdio.h>
 

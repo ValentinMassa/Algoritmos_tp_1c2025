@@ -27,7 +27,7 @@ unsigned char ObtenerValorPorClave(t_DicLista *p, const void* key, void* Destino
 
 unsigned char EliminarValorPorClave(t_DicLista *p, const void* key, int (*CmpDic)(const void* a, const void* b));
 
-void MapDLista(t_DicLista *p, void (*accion)(void*));
+void MapDLista(t_DicLista *p, void* param ,void (*accion)(void* dataNodo, void* parametro));
 
 void EliminarDlista(t_DicLista *p);
 

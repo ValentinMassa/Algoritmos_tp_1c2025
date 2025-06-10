@@ -5,9 +5,11 @@
 
 #include "../Header/ProcesadorTexto.h"
 #include "../../../lib/TDA_t_diccionario/headers/diccionario.h"
+#include "../../../lib/Lista/main.h"
 
 #define TAM_MAX_BUFFER 1000
 #define TAM_MAX_WORD 15
+#define CANT_ELEM_TOP 5
 
 #define ES_ESPACIO(a)( (a) == ' '? 1:0)
 
@@ -49,6 +51,9 @@ unsigned char CargarArchivoEnDiccionario(t_interfaz * newI, t_diccionario *dicci
         void ponerEnMayuscula(char* palabra) ;
     void ActualizarCantidadRepeticiones(void*a, const void*b);
     void imprimirPalabras(const void* key, const void*dato);
+    void MejoresPalabras(void*data, void* param);
+        int cmpNumeros(const void* a, const void* b);
+        void imprimirTopPalabras(const void* data, void* param);
 
 
 void InterfazUsuario(){
@@ -108,6 +113,8 @@ void interfazCargaDatosIniciales(t_interfaz * newI){
 unsigned char InterfazOperaciones(t_interfaz * newI){
     char opcion[5];
     int opcionFin;
+    Slist lista;
+
     t_informe informe =
         {
             .cantEspacios = 0,
@@ -149,9 +156,11 @@ unsigned char InterfazOperaciones(t_interfaz * newI){
                            informe.cantPalabras, informe.cantEspacios, informe.cantidadSignosPuntuacion);
                 break;
             case 1:
-                printf("\n> Mostrando top 5 palabras más utilizadas...\n");
-                // Llamar a función correspondiente, por ejemplo:
-                // mostrarTop5(newI);
+                createList(&lista);
+                recorrer_dic_map(&diccionario, &lista, MejoresPalabras);
+                printf("\n> Mostrando top 5 palabras mas utilizadas...\n");
+                printListTop(&lista, NULL,imprimirTopPalabras,cmpNumeros);
+                destroyList(&lista);
                 break;
 
             case 2:
@@ -178,6 +187,20 @@ unsigned char InterfazOperaciones(t_interfaz * newI){
     vaciar_dic(&diccionario);
 
     return 1;
+}
+
+void MejoresPalabras(void*data, void* param){
+    t_palabra * palabra = (t_palabra*)data;
+    Slist * lista = (Slist*)param;
+    InsertarMaxNElementosEnOrden(lista, palabra,sizeof(t_palabra), CANT_ELEM_TOP, cmpNumeros);
+}
+
+
+int cmpNumeros(const void* a, const void* b){
+    t_palabra * ai = (t_palabra*)a;
+    t_palabra * bi = (t_palabra*)b;
+
+    return (ai->repeticion - bi->repeticion);
 }
 
 unsigned char CargarArchivoEnDiccionario(t_interfaz * newI, t_diccionario *diccionario, t_informe * informe){
@@ -247,16 +270,18 @@ unsigned char TrozarYGuardarPalabras(char* buffer, t_diccionario* diccionario, t
 char* BuscarInicioPalabraRecursivo(char*fin, char* buffer){
     char* iterador;
 
-    if(fin<= buffer) return fin;
+    if(fin<= buffer) return buffer;
 
     iterador = fin - 1;
 
     if(ES_ESPACIO(*iterador) || ES_SIGNO_PUNTUACION(*iterador))
         return iterador + 1;
-    if(iterador == buffer || ES_ESPACIO(*iterador) || ES_SIGNO_PUNTUACION(*iterador))
-        return iterador;
 
     return BuscarInicioPalabraRecursivo(iterador, buffer);
+}
+void imprimirTopPalabras(const void* data, void* param){
+    t_palabra * palabra = (t_palabra*)data;
+    printf("PALABRA: %s REPETICIONES: %d \n", palabra->palabra, palabra->repeticion);
 }
 
 void ActualizarCantidadRepeticiones(void*a, const void*b){
