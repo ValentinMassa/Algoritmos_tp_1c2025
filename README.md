@@ -58,13 +58,12 @@ Este repositorio contiene el trabajo práctico de la materia Algoritmos y Estruc
 | El proyecto principal no compila | Asegúrate de compilar primero todas las dependencias o librerías necesarias. Verifica que las rutas de los archivos sean correctas y que el entorno esté correctamente configurado. |
 | Faltan archivos de configuración | Verifica que todos los archivos requeridos estén presentes en las carpetas correspondientes (`src/configuration`, `src/statics`, etc.). |
 
-## Cómo jugar / ejecutar
+## Cómo  ejecutar
 
 1. Iniciar el programa principal.
 2. Seguir las instrucciones en pantalla para interactuar con el sistema (por ejemplo, menú principal, carga de datos, ejecución de algoritmos, etc.).
-3. Consultar la documentación interna o los comentarios en el código para detalles sobre el uso de cada módulo.
+3. Consultar la documentación interna o los comentarios en el código para detalles sobre el uso de cada módulo. --> Recomendado el .docx InstruccionesDeUso.docx
 
-> NOTA: Adaptar esta sección según la consigna y el flujo de uso de tu TP.
 
 ## Estructura de la aplicación
 
