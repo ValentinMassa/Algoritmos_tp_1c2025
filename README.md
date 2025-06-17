@@ -101,6 +101,10 @@ Algoritmos_tp_1c2025/
 │   │   ├── t_diccionario.h
 │   │   ├── t_diccionario.c
 │   │   └── bin/
+│   ├── TDA_t_ListaDiccionario/
+│   │   ├── ListaDiccionario.c
+│   │   ├── ListaDiccionario.h
+│   │   └── bin/
 │   └── Lista/
 │       ├── lista.h
 │       ├── lista.c
