@@ -10,7 +10,7 @@ unsigned Hash_Generico_DJB2(const void* key, unsigned sizeKey, unsigned tabla_ca
     unsigned i;
     const unsigned char* p = key;
 
-    unsigned long hash = 5381; //semilla inciial djb2, - colisiones en entradas reales, + (districucion uniforme numero primero impar)
+    unsigned long hash = 5381; //semilla inicial djb2, - colisiones en entradas reales, + (distribucion uniforme numero primero impar)
 
     for (i = 0; i < sizeKey; i++) {
         hash = ((hash << 5) + hash) + p[i];  //hash << 5 multiplica el hasg por 2 a la 5, desplaza a la izq 5 bits.

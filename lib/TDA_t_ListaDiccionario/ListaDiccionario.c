@@ -13,13 +13,11 @@ unsigned char InsertarElementoEnElPrincipio(t_DicLista *p, const void* key, unsi
     t_Node * nuevo;
 
     nuevo = (t_Node*)malloc(sizeof(t_Node));
-    if(!nuevo)
-    {
-        free(nuevo);
-        return 0;
-    }
+    if(!nuevo)return 0;
+
     if(( nuevo->__key = malloc(sizeKey)) == NULL || (nuevo->__data = malloc(sizeData)) == NULL) {
         free(nuevo->__key);
+        free(nuevo);
         return 0;
        }
     memcpy(nuevo->__key, key, sizeKey);
@@ -46,13 +44,11 @@ unsigned char InsertarElementoSinRepeticionDeKey(t_DicLista *p, const void* key,
     }
 
     nuevo = (t_Node*)malloc(sizeof(t_Node));
-    if(!nuevo)
-    {
-        free(nuevo);
-        return 0;
-    }
+    if(!nuevo)return 0;
+    
     if(( nuevo->__key = malloc(sizeKey)) == NULL || (nuevo->__data = malloc(sizeData)) == NULL) {
         free(nuevo->__key);
+        free(nuevo);
         return 0;
        }
     memcpy(nuevo->__key, key, sizeKey);
