@@ -12,7 +12,8 @@
       "environment": [],
       "externalConsole": true,
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb"
+      "miDebuggerPath": "gdb",
+      "preLaunchTask": "Compilar proyecto C"
     }
   ]
 }
