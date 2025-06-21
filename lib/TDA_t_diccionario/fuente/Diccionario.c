@@ -126,6 +126,9 @@ void vaciar_dic(t_diccionario * dic){
         if(dic->dic[i] != 0)
             EliminarDlista(&dic->dic[i]);
     }
+    free(dic->dic);
+    dic->CmpDic = NULL;
+    dic->cantElem = 0;
 }
 
 

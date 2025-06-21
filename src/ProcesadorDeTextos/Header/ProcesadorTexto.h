@@ -3,9 +3,9 @@
 
 #include <string.h>
 
-#define RutaGenerica "../../Carpeta de Archivos/"
+#define RUTA_ARCHIVOS "../../Carpeta_de_Archivos/"
 #define  MAX_LARGO_RUTA 90
-#define  MAX_LARGO_ARCHIVO (MAX_LARGO_RUTA - strlen(RutaGenerica))
+#define  MAX_LARGO_ARCHIVO (MAX_LARGO_RUTA - strlen(RUTA_ARCHIVOS))
 
 
 

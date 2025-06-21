@@ -2,17 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Ejecutar main.exe",
+      "name": "Ejecutar y Depurar (F5)",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/main.exe",
+      "program": "${workspaceFolder}/ProcesadorDeTextos_debug.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
+      "cwd":"${workspaceFolder}/src/ProcesadorDeTextos",
       "environment": [],
       "externalConsole": true,
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb"
+      "miDebuggerPath": "gdb",
+      "preLaunchTask": "Compilar para Debug"
     }
   ]
 }

@@ -2,17 +2,19 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Compilar proyecto C",
+      "label": "Compilar para Debug",
       "type": "shell",
       "command": "gcc",
       "args": [
         "-g",
-        "${workspaceFolder}/src/Ejercicio_1/main.c",
-        "${workspaceFolder}/lib/util.c",
-        "-I",
-        "${workspaceFolder}/lib",
+        // Aquí incluimos TODOS los archivos .c necesarios
+        "${workspaceFolder}/src/ProcesadorDeTextos/main.c",
+        "${workspaceFolder}/src/ProcesadorDeTextos/Fuente/ProcesadorTexto.c",
+        "${workspaceFolder}/lib/TDA_t_diccionario/fuente/Diccionario.c",
+        "${workspaceFolder}/lib/TDA_t_ListaDiccionario/ListaDiccionario.c",
+        "${workspaceFolder}/lib/Lista/main.c",
         "-o",
-        "${workspaceFolder}/bin/main.exe"
+        "${workspaceFolder}/ProcesadorDeTextos_debug.exe"
       ],
       "group": {
         "kind": "build",
@@ -20,5 +22,6 @@
       },
       "problemMatcher": ["$gcc"]
     }
+    // Puedes tener aquí también la tarea de Release si quieres
   ]
 }

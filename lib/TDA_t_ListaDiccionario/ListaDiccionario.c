@@ -65,7 +65,7 @@ unsigned char InsertarElementoSinRepeticionDeKey(t_DicLista *p, const void* key,
 unsigned char ObtenerValorPorClave(t_DicLista *p, const void* key, void* DestinoData,
                                    unsigned sizeDataDestino,
                                    int (*CmpDic)(const void* a, const void* b)){
-    int resultado = 0;
+    int resultado = 1;
 
     while( *p && (resultado = CmpDic((*p)->__key, key) ) != 0 )
     {
@@ -82,7 +82,7 @@ unsigned char ObtenerValorPorClave(t_DicLista *p, const void* key, void* Destino
 
 unsigned char EliminarValorPorClave(t_DicLista *p, const void* key,
                                    int (*CmpDic)(const void* a, const void* b)){
-    int resultado = 0;
+    int resultado = 1;
     t_Node * elim;
 
     while( *p && (resultado = CmpDic( (*p)->__key, key)) != 0 )

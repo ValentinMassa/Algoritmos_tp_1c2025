@@ -17,8 +17,7 @@
     (c) == '.' || (c) == ',' || (c) == ';' || (c) == ':' || \
     (c) == '!' || (c) == '?' || (c) == '(' || (c) == ')' || \
     (c) == '[' || (c) == ']' || (c) == '{' || (c) == '}' || \
-    (c) == '"' || (c) == '\''|| (c) == '-' || (c) == '�' || \
-    (c) == '�' || (c) == '`' )
+    (c) == '"' || (c) == '\''|| (c) == '-' || (c) == '`' )
 
 #define ES_LETRA(c) ( ((c) >= 'A' && (c) <= 'Z') || ((c) >= 'a' && (c) <= 'z') )
 
@@ -86,7 +85,7 @@ void interfazCargaDatosIniciales(t_interfaz * newI){
             fprintf(stderr, "El archivo debe tener extension .txt\n");
             continue;
         }
-        strcpy(newI->ruta, RutaGenerica);
+        strcpy(newI->ruta, RUTA_ARCHIVOS);
         strcat(newI->ruta, nombre_archivo);
 
         fp = fopen(newI->ruta, "rt");
@@ -100,8 +99,8 @@ void interfazCargaDatosIniciales(t_interfaz * newI){
     } while (!valido);
     fclose(fp);
     printf("> Ingrese la cantidad de entradas de la tabla: ");
-    while (fgets(buffer, 3, stdin) == NULL || atoi(buffer) <= 0) {
-        printf("Cantidad inv�lida. Ingrese un n�mero mayor a 0: ");
+    while (fgets(buffer, 4, stdin) == NULL || atoi(buffer) <= 0) {
+        printf("Cantidad invalida. Ingrese un numero mayor a 0: ");
         fflush(stdin);
     }
     fflush(stdin);
