@@ -17,8 +17,8 @@
     (c) == '.' || (c) == ',' || (c) == ';' || (c) == ':' || \
     (c) == '!' || (c) == '?' || (c) == '(' || (c) == ')' || \
     (c) == '[' || (c) == ']' || (c) == '{' || (c) == '}' || \
-    (c) == '"' || (c) == '\''|| (c) == '-' || (c) == '—' || \
-    (c) == '…' || (c) == '`' )
+    (c) == '"' || (c) == '\''|| (c) == '-' || (c) == 'ï¿½' || \
+    (c) == 'ï¿½' || (c) == '`' )
 
 #define ES_LETRA(c) ( ((c) >= 'A' && (c) <= 'Z') || ((c) >= 'a' && (c) <= 'z') )
 
@@ -101,7 +101,7 @@ void interfazCargaDatosIniciales(t_interfaz * newI){
     fclose(fp);
     printf("> Ingrese la cantidad de entradas de la tabla: ");
     while (fgets(buffer, 3, stdin) == NULL || atoi(buffer) <= 0) {
-        printf("Cantidad inválida. Ingrese un número mayor a 0: ");
+        printf("Cantidad invï¿½lida. Ingrese un nï¿½mero mayor a 0: ");
         fflush(stdin);
     }
     fflush(stdin);
@@ -140,7 +140,7 @@ unsigned char InterfazOperaciones(t_interfaz * newI){
     printf("> Seleccione una opcion para operar con el archivo: \n \t\t > %s \n", newI->ruta);
 
     do{
-    printf("> 0. Informe (cantidad de palabras, espacios y signos de puntuación que contiene el texto) \n");
+    printf("> 0. Informe (cantidad de palabras, espacios y signos de puntuaciï¿½n que contiene el texto) \n");
     printf("> 1. Podio top 5 palabras mas utilizadas \n");
     printf("> 2. Ver Tabla Hash Key y Valores \n");
     printf("> 3. Salir \n");
@@ -177,7 +177,7 @@ unsigned char InterfazOperaciones(t_interfaz * newI){
                 break;
 
             default:
-                printf("\n> Opción no válida. Intente nuevamente.\n");
+                printf("\n> Opciï¿½n no vï¿½lida. Intente nuevamente.\n");
                 break;
         }
 
@@ -225,8 +225,8 @@ unsigned char CargarArchivoEnDiccionario(t_interfaz * newI, t_diccionario *dicci
             return 0;
         }
     }
-    return 1;
     fclose(fp);
+    return 1;
 }
 
 unsigned char TrozarYGuardarPalabras(char* buffer, t_diccionario* diccionario, t_informe * informe){
