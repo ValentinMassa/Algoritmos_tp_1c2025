@@ -33,9 +33,9 @@ unsigned char InsertarElementoEnElPrincipio(t_DicLista *p, const void* key, unsi
 unsigned char InsertarElementoSinRepeticionDeKey(t_DicLista *p, const void* key, unsigned sizeKey, const void* Data, unsigned sizeData,
                                             void(*actualizar)(void*a, const void* b), int (*CmpDic)(const void* a, const void* b)){
     t_Node * nuevo;
-    int resultado =0;
+    int resultado = 1;
 
-    while( *p && (resultado = CmpDic(key, (*p)->__key)) != 0 )
+    while( *p && ( resultado = CmpDic(key, (*p)->__key) ) != 0 )
         p = &(*p)->__next;
 
     if(resultado == 0){

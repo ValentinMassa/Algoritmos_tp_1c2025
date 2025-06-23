@@ -176,7 +176,7 @@ unsigned char InterfazOperaciones(t_interfaz * newI){
                 break;
 
             default:
-                printf("\n> Opci�n no v�lida. Intente nuevamente.\n");
+                printf("\n> Opcion no valida. Intente nuevamente.\n");
                 break;
         }
 
@@ -235,7 +235,7 @@ unsigned char TrozarYGuardarPalabras(char* buffer, t_diccionario* diccionario, t
 
     pointer = strchr(buffer, '\n');
     if(pointer){
-       *pointer = '\0';
+       *pointer = '\0';  
     }
     pointer = strchr(buffer, '\0');
     pointer --;
@@ -257,7 +257,7 @@ unsigned char TrozarYGuardarPalabras(char* buffer, t_diccionario* diccionario, t
         fin = pointer;
         inicio = BuscarInicioPalabraRecursivo(fin, buffer);
 
-        memset(palabra.palabra, 0, TAM_MAX_WORD);
+        memset(palabra.palabra, 0, TAM_MAX_WORD); 
         strcpy(palabra.palabra, inicio);
         palabra.repeticion = 0;
 

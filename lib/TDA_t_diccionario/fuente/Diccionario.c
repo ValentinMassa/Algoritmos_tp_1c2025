@@ -13,7 +13,7 @@ unsigned Hash_Generico_DJB2(const void* key, unsigned sizeKey, unsigned tabla_ca
     unsigned long hash = 5381; //semilla inicial djb2, - colisiones en entradas reales, + (distribucion uniforme numero primero impar)
 
     for (i = 0; i < sizeKey; i++) {
-        hash = ((hash << 5) + hash) + p[i];  //hash << 5 multiplica el hasg por 2 a la 5, desplaza a la izq 5 bits.
+        hash = ((hash << 5) + hash) + p[i];  // hash << 5 multiplica el hash por 2 a la 5, desplaza a la izq 5 bits.
     }
     return (unsigned)(hash % tabla_capacidad); //resultado entre 0 y tabla capacidad menos 1, ya que devuelve el resto
 }
@@ -73,7 +73,7 @@ unsigned char poner_dicSinRep(t_diccionario * dic, void* key, unsigned size_key 
     return 1;
 }
 
-unsigned char obtener_dic(t_diccionario * dic, void* key,unsigned size_key, void* data, unsigned size_data){
+unsigned char obtener_dic(t_diccionario * dic, void* key, unsigned size_key, void* data, unsigned size_data){
 
     unsigned posicion;
     posicion = Hash_Generico_DJB2(key, size_key, dic->cantElem);
@@ -112,7 +112,6 @@ unsigned char sacar_dic(t_diccionario * dic, const void* key, unsigned size_key)
 
 void recorrer_dic_map(t_diccionario * dic, void* param , void accion(void* data, void* parametro)){
     int i;
-
     for(i=0; i<dic->cantElem; i ++){
         if(dic->dic[i] != 0)
             MapDLista(( &dic->dic[i]),param, accion);
